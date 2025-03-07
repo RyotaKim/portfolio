@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kim Sumilang</title>
+    
+    <!-- Tailwind CSS (Use CDN properly) -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Kanit:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        html { scroll-behavior: smooth; }
+        #vanta-bg {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- Vanta Background -->
+    <div id="vanta-bg" class="fixed top-0 left-0 w-screen h-screen -z-10"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-6 w-full flex justify-end px-8 text-white text-lg z-50">
+        <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none">☰</button>
+        <div id="menu" class="hidden md:flex space-x-6">
+            <a href="#home" class="hover:underline">Home</a>
+            <a href="#about" class="hover:underline">About</a>
+            <a href="#tech-stack" class="hover:underline">Tech Stack</a>
+            <a href="#contact" class="hover:underline">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed top-16 left-1/2 w-48 transform -translate-x-1/2 border-2 border-white text-white flex flex-col space-y-4 px-6 py-4 rounded-lg shadow-lg md:hidden">
+        <a href="#home" class="hover:underline">Home</a>
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#tech-stack" class="hover:underline">Tech Stack</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+    </div>
+
+    <section id="home"></section>
+    <section id="about"></section>
+    <section id="tech-stack"></section>
+    <section id="contact"></section>
+
+    <!-- Hero Section -->
+    <div class="min-h-screen w-full flex flex-col justify-center items-center text-center relative z-10 px-4">
+        <h1 class="text-4xl md:text-5xl text-white leading-tight my-9">Kim Benedict Sumilang</h1>
+        <img src="/pictures/Fish it.png" alt="Profile Image" class="w-48 md:w-96 h-48 md:h-96 rounded-full border-4 border-white shadow-lg mt-6">
+    </div>
+
+    <!-- About Section -->
+    <div class="min-h-screen w-full flex flex-col justify-center items-center text-center relative z-10 px-4" id="about">
+        <img src="/pictures/aboutme.jpg" alt="About Image" class="w-64 md:w-80 h-64 md:h-80 object-cover rounded-lg shadow-lg mt-6 my-5">
+        <h2 class="text-3xl font-bold text-white">About Me</h2>
+        <p class="mt-4 text-lg text-gray-600 bg-white border-2 rounded-lg w-3/4 md:w-1/2 px-6 py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="min-h-screen w-full flex flex-col justify-center items-center text-center relative z-10 px-4" id="tech-stack">
+        <h2 class="text-3xl font-bold text-white">Tech Stack</h2>
+        <div class="flex flex-wrap justify-center items-center gap-6 mt-6">
+            <img src="/pictures/path-to-html-logo.png" alt="HTML" class="w-14 h-14 hover:scale-125 transition-transform duration-300">
+            <img src="/pictures/path-to-css-logo.png" alt="CSS" class="w-14 h-14 hover:scale-125 transition-transform duration-300">
+            <img src="/pictures/path-to-javascript-logo.png" alt="JavaScript" class="w-14 h-14 hover:scale-125 transition-transform duration-300">
+            <img src="/pictures/path-to-c-logo.png" alt="C" class="w-14 h-14 hover:scale-125 transition-transform duration-300">
+            <img src="/pictures/path-to-cpp-logo.png" alt="C++" class="w-14 h-14 hover:scale-125 transition-transform duration-300">
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="min-h-screen w-full flex flex-col justify-center items-center text-center relative z-10 px-4" id="contact">
+        <h2 class="text-3xl font-bold text-white" style="font-family: 'Kanit', sans-serif;">Contact Me!</h2>
+        <p class="text-lg text-white mt-4">Check out my profiles:</p>
+        <div class="flex flex-col space-y-4 mt-6">
+            <a href="https://www.linkedin.com/in/kim-sumilang-240280354/" target="_blank">
+                <img src="/pictures/linkedin-logo.png" alt="LinkedIn" class="w-16">
+            </a>
+            <a href="https://github.com/sdca-kim-benedict-sumilang" target="_blank">
+                <img src="/pictures/github-logo.png" alt="GitHub" class="w-16">
+            </a>
+        </div>
+    </div>
+
+    <!-- External JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+

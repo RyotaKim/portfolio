@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int findUniqueElement(int nums[], int size) {
+    int uniqueElement = 0;
+    
+    for (int i = 0; i < size; i++) {
+        uniqueElement ^= nums[i];
+    }
+    
+    return uniqueElement;
+}
+
+int main() {
+    int nums[] = {2, 1, 3, 2, 1};
+    int size = sizeof(nums) / sizeof(nums[0]);
+    
+    int uniqueElement = findUniqueElement(nums, size);
+    
+    printf("Unique element: %d\n", uniqueElement);  // Output: 3
+    
+    return 0;
+}
