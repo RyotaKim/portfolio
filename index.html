@@ -40,6 +40,13 @@
             <a href="#contact" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Contact</a>
         </div>
          <!-- Mobile Menu -->
+         <div id="mobile-menu" class="fixed top-16 left-1/2 w-48 transform -translate-x-1/2 border-2 border-white text-white flex flex-col space-y-4 px-6 py-4 rounded-lg shadow-lg md:hidden">
+            <a href="#home" class="hover:underline">Home</a>
+            <a href="#about" class="hover:underline">About</a>
+            <a href="#tech-stack" class="hover:underline">Tech Stack</a>
+            <a href="#contact" class="hover:underline">Contact</a>
+        </div>
+    
          
     </nav>
 
@@ -62,20 +69,43 @@
     <div class="min-h-screen w-full flex flex-col justify-center items-center text-center relative z-10 px-4" id="about">
         <img src="pictures/aboutme.jpg" alt="About Image" class="w-64 md:w-80 h-64 md:h-80 object-cover rounded-lg shadow-lg mt-6 my-5">
         <h2 class="text-3xl font-bold text-white" style="font-family: 'Lexend', sans-serif;">About Me</h2>
-        <p class="mt-4 text-lg text-gray-600 bg-white border-2 rounded-lg w-3/4 md:w-1/2 px-6 py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="mt-4 text-lg text-white bg-opacity-50 border-2 rounded-lg w-3/4 md:w-1/2 px-6 py-3" style="font-family: 'Lexend', sans-serif;">Hi, I'm Kim! I'm currently a student at SDCA, pursuing a Bachelor of Science in Information Technology (BSIT). My passion for technology and problem-solving drives me to explore the world of software development.
+            As a future software engineer, I am dedicated to expanding my skills in coding and creating innovative solutions. I believe in continuous learning, and I'm excited to apply my knowledge to build software that can make a positive impact.
+            I am always looking for opportunities to grow and collaborate on exciting projects, and I’m eager to connect with like-minded individuals and industry professionals who share the same passion for technology!</p>
     </div>
 
     <!-- Tech Stack Section -->
     <div class="min-h-screen w-full flex flex-col justify-center items-center text-center relative z-10 px-4" id="tech-stack">
         <h2 class="text-3xl font-bold text-white" style="font-family: 'Lexend', sans-serif;">Tech Stack</h2>
         <div class="flex flex-wrap justify-center items-center gap-6 mt-6">
-            <img src="pictures/path-to-html-logo.png" alt="HTML" class="w-14 h-14 hover:scale-125 transition-transform duration-300">
-            <img src="pictures/path-to-css-logo.png" alt="CSS" class="w-14 h-14 hover:scale-125 transition-transform duration-300">
-            <img src="pictures/path-to-javascript-logo.png" alt="JavaScript" class="w-14 h-14 hover:scale-125 transition-transform duration-300">
-            <img src="pictures/path-to-c-logo.png" alt="C" class="w-14 h-14 hover:scale-125 transition-transform duration-300">
-            <img src="pictures/path-to-cpp-logo.png" alt="C++" class="w-14 h-14 hover:scale-125 transition-transform duration-300">
+            <!-- HTML Icon -->
+            <div class="tech-item relative group">
+                <img src="pictures/path-to-html-logo.png" alt="HTML" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="HTML">
+                <span class="absolute inset-0 flex justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">HTML</span>
+            </div>
+            <!-- CSS Icon -->
+            <div class="tech-item relative group">
+                <img src="pictures/path-to-css-logo.png" alt="CSS" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="CSS">
+                <span class="absolute inset-0 flex justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">CSS</span>
+            </div>
+            <!-- JavaScript Icon -->
+            <div class="tech-item relative group">
+                <img src="pictures/path-to-javascript-logo.png" alt="JavaScript" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="JavaScript">
+                <span class="absolute inset-0 flex justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">JavaScript</span>
+            </div>
+            <!-- C Icon -->
+            <div class="tech-item relative group">
+                <img src="pictures/path-to-c-logo.png" alt="C" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="C">
+                <span class="absolute inset-0 flex justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">C</span>
+            </div>
+            <!-- C++ Icon -->
+            <div class="tech-item relative group">
+                <img src="pictures/path-to-cpp-logo.png" alt="C++" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="C++">
+                <span class="absolute inset-0 flex justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">C++</span>
+            </div>
         </div>
     </div>
+    
 
     <!-- Contact Section -->
     <div class="min-h-screen w-full flex flex-col justify-center items-center text-center relative z-10 px-4" id="contact">
@@ -85,7 +115,7 @@
             <a href="https://www.linkedin.com/in/kim-sumilang-240280354/" target="_blank">
                 <img src="pictures/linkedin-logo.png" alt="LinkedIn" class="w-16">
             </a>
-            <a href="https://github.com/sdca-kim-benedict-sumilang" target="_blank">
+            <a href="https://github.com/RyotaKim" target="_blank">
                 <img src="pictures/github-logo.png" alt="GitHub" class="w-16">
             </a>
         </div>
