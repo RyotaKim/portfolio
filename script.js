@@ -13,30 +13,36 @@ VANTA.WAVES({
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
-    const menuLinks = document.querySelectorAll("#mobile-menu a");
 
-    // Toggle mobile menu visibility when the burger icon is clicked
+    // Single click event listener for menu toggle
     menuToggle.addEventListener("click", function (event) {
-        event.stopPropagation(); // Prevents the click from propagating to document click
-        mobileMenu.classList.toggle("hidden"); // Toggle menu visibility
+        event.stopPropagation();
+        mobileMenu.classList.toggle("hidden");
     });
 
-    /* Close the mobile menu if clicking outside of the menu or the toggle button
+    // Close menu when clicking outside
     document.addEventListener("click", function (event) {
-        if (!menuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+        if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
             mobileMenu.classList.add("hidden");
         }
-    });*/
+    });
 
-    
+    // Close menu when clicking a link
+    const menuLinks = document.querySelectorAll("#mobile-menu a");
+    menuLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+        });
+    });
 
-    // Close the menu when pressing the Escape key
+    // Close menu with Escape key
     document.addEventListener("keydown", function (event) {
         if (event.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
             mobileMenu.classList.add("hidden");
         }
     });
 });
+
 
 
 

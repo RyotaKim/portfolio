@@ -32,37 +32,28 @@
 
     <!-- Navbar -->
     <nav class="fixed top-6 w-full flex justify-end px-8 text-white text-lg z-50">
-        <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none">☰</button>
+        <button id="menu-toggle" class="block md:hidden text-white text-2xl focus:outline-none">☰</button>
         <div id="menu" class="hidden md:flex space-x-6">
             <a href="#home" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Home</a>
             <a href="#about" class="hover:underline" style="font-family: 'Lexend', sans-serif;">About</a>
             <a href="#tech-stack" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Tech Stack</a>
             <a href="#contact" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Contact</a>
         </div>
-         <!-- Mobile Menu -->
-         <div id="mobile-menu" class="fixed top-16 left-1/2 w-48 transform -translate-x-1/2 border-2 border-white text-white flex flex-col space-y-4 px-6 py-4 rounded-lg shadow-lg md:hidden">
-            <a href="#home" class="hover:underline">Home</a>
-            <a href="#about" class="hover:underline">About</a>
-            <a href="#tech-stack" class="hover:underline">Tech Stack</a>
-            <a href="#contact" class="hover:underline">Contact</a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-16 right-8 w-48 bg-black bg-opacity-90 border-2 border-white text-white rounded-lg shadow-lg md:hidden">
+            <div class="flex flex-col space-y-4 p-4">
+                <a href="#home" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Home</a>
+                <a href="#about" class="hover:underline" style="font-family: 'Lexend', sans-serif;" >About</a>
+                <a href="#tech-stack" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Tech Stack</a>
+                <a href="#contact" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Contact</a>
+            </div>
         </div>
-    
-         
     </nav>
-
-    <div id="mobile-menu" class="fixed top-16 left-1/2 w-48 transform -translate-x-1/2 border-2 border-white text-white flex flex-col space-y-4 px-6 py-4 rounded-lg shadow-lg md:hidden">
-        <a href="#home" class="hover:underline">Home</a>
-        <a href="#about" class="hover:underline">About</a>
-        <a href="#tech-stack" class="hover:underline">Tech Stack</a>
-        <a href="#contact" class="hover:underline">Contact</a>
-    </div>
-
-    
 
     <!-- Hero Section -->
     <div class="min-h-screen w-full flex flex-col justify-center items-center text-center relative z-10 px-4" id="home">
         <h1 class="text-4xl md:text-5xl text-white leading-tight my-9" style="font-family: 'Lexend', sans-serif;">Kim Benedict Sumilang</h1>
-        <img src="pictures/Fish it.png" alt="Profile Image" class="w-48 md:w-96 h-48 md:h-96 rounded-full border-4 border-white shadow-lg mt-6">
+        <img src="pictures/homepage-picture.png" alt="Profile Image" class="w-48 md:w-96 h-48 md:h-96 rounded-full border-4 border-white shadow-lg mt-6">
     </div>
 
     <!-- About Section -->
@@ -80,27 +71,27 @@
         <div class="flex flex-wrap justify-center items-center gap-6 mt-6">
             <!-- HTML Icon -->
             <div class="tech-item relative group">
-                <img src="pictures/path-to-html-logo.png" alt="HTML" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="HTML">
+                <img src="pictures/html.png" alt="HTML" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="HTML">
                 <span class="absolute inset-0 flex justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">HTML</span>
             </div>
             <!-- CSS Icon -->
             <div class="tech-item relative group">
-                <img src="pictures/path-to-css-logo.png" alt="CSS" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="CSS">
+                <img src="pictures/css.png" alt="CSS" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="CSS">
                 <span class="absolute inset-0 flex justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">CSS</span>
             </div>
             <!-- JavaScript Icon -->
             <div class="tech-item relative group">
-                <img src="pictures/path-to-javascript-logo.png" alt="JavaScript" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="JavaScript">
+                <img src="pictures/js.png" alt="JavaScript" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="JavaScript">
                 <span class="absolute inset-0 flex justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">JavaScript</span>
             </div>
             <!-- C Icon -->
             <div class="tech-item relative group">
-                <img src="pictures/path-to-c-logo.png" alt="C" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="C">
+                <img src="pictures/c.png" alt="C" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="C">
                 <span class="absolute inset-0 flex justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">C</span>
             </div>
             <!-- C++ Icon -->
             <div class="tech-item relative group">
-                <img src="pictures/path-to-cpp-logo.png" alt="C++" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="C++">
+                <img src="pictures/cpp.png" alt="C++" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="C++">
                 <span class="absolute inset-0 flex justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">C++</span>
             </div>
         </div>
@@ -126,8 +117,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
     <script src="script.js"></script>
 
+    
+
 </body>
 </html>
-
-
-
