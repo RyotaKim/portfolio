@@ -1,44 +1,29 @@
+// Initialize VANTA waves background
 VANTA.WAVES({
-    el: "body",  
+    el: "#vanta-bg",
     mouseControls: true,
     touchControls: true,
     gyroControls: false,
-    minHeight: window.innerHeight,
-    minWidth: window.innerWidth,
+    minHeight: 200.00,
+    minWidth: 200.00,
     scale: 1.00,
     scaleMobile: 1.00,
-    color: 0x141414
+    color: 0x131a3a,
+    shininess: 30.00,
+    waveHeight: 15.00,
+    waveSpeed: 1.00
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menu-toggle");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    // Single click event listener for menu toggle
-    menuToggle.addEventListener("click", function (event) {
-        event.stopPropagation();
-        mobileMenu.classList.toggle("hidden");
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener("click", function (event) {
-        if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-            mobileMenu.classList.add("hidden");
-        }
-    });
-
-    // Close menu when clicking a link
-    const menuLinks = document.querySelectorAll("#mobile-menu a");
-    menuLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            mobileMenu.classList.add("hidden");
-        });
-    });
-
-    // Close menu with Escape key
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
-            mobileMenu.classList.add("hidden");
+// Handle mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle.addEventListener('click', function() {
+        if (mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('hidden');
+        } else {
+            mobileMenu.classList.add('hidden');
         }
     });
 });
