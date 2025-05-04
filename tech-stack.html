@@ -23,6 +23,44 @@
             left: 0;
             z-index: -1;
         }
+        
+        /* Modal Dialog Styles */
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal-backdrop.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .modal-content {
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 2px solid white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            width: 90%;
+            max-width: 400px;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        
+        .modal-backdrop.active .modal-content {
+            transform: scale(1);
+        }
     </style>
 </head>
 <body class="relative">
@@ -39,13 +77,19 @@
             <a href="tech-stack.html" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Tech Stack</a>
             <a href="contact.html" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Contact</a>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden absolute top-16 right-8 w-48 bg-black bg-opacity-90 border-2 border-white text-white rounded-lg shadow-lg md:hidden">
-            <div class="flex flex-col space-y-4 p-4">
-                <a href="index.html" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Home</a>
-                <a href="about.html" class="hover:underline" style="font-family: 'Lexend', sans-serif;">About</a>
-                <a href="tech-stack.html" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Tech Stack</a>
-                <a href="contact.html" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Contact</a>
+        
+        <!-- Modal Dialog (Mobile Menu) -->
+        <div id="mobile-menu-modal" class="modal-backdrop">
+            <div class="modal-content">
+                <div class="flex justify-end">
+                    <button id="close-modal" class="text-white text-2xl">&times;</button>
+                </div>
+                <div class="flex flex-col space-y-6 p-4">
+                    <a href="index.html" class="text-white text-xl hover:underline" style="font-family: 'Lexend', sans-serif;">Home</a>
+                    <a href="about.html" class="text-white text-xl hover:underline" style="font-family: 'Lexend', sans-serif;">About</a>
+                    <a href="tech-stack.html" class="text-white text-xl hover:underline" style="font-family: 'Lexend', sans-serif;">Tech Stack</a>
+                    <a href="contact.html" class="text-white text-xl hover:underline" style="font-family: 'Lexend', sans-serif;">Contact</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -53,31 +97,79 @@
     <!-- Tech Stack Section -->
     <div class="min-h-screen w-full flex flex-col justify-center items-center text-center relative z-10 px-4">
         <h2 class="text-3xl font-bold text-white" style="font-family: 'Lexend', sans-serif;">Tech Stack</h2>
-        <div class="flex flex-wrap justify-center items-center gap-6 mt-6">
+        
+        <!-- Responsive grid container for tech icons with fixed positioning on desktop -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-8 mx-auto w-full max-w-4xl">
             <!-- HTML Icon -->
-            <div class="tech-item relative group">
-                <img src="pictures/html.png" alt="HTML" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="HTML">
-                <span class="absolute inset-0 flex justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">HTML</span>
+            <div class="tech-item flex flex-col items-center justify-center p-2">
+                <div class="relative group mb-2">
+                    <img src="pictures/html.png" alt="HTML" class="w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24 hover:scale-125 transition-transform duration-300" title="HTML">
+                    <span class="absolute inset-0 flex justify-center items-center text-white text-sm md:text-base opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">HTML</span>
+                </div>
+                <span class="text-white text-sm md:text-base lg:text-lg" style="font-family: 'Lexend', sans-serif;">HTML</span>
             </div>
+            
             <!-- CSS Icon -->
-            <div class="tech-item relative group">
-                <img src="pictures/css.png" alt="CSS" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="CSS">
-                <span class="absolute inset-0 flex justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">CSS</span>
+            <div class="tech-item flex flex-col items-center justify-center p-2">
+                <div class="relative group mb-2">
+                    <img src="pictures/css.png" alt="CSS" class="w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24 hover:scale-125 transition-transform duration-300" title="CSS">
+                    <span class="absolute inset-0 flex justify-center items-center text-white text-sm md:text-base opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">CSS</span>
+                </div>
+                <span class="text-white text-sm md:text-base lg:text-lg" style="font-family: 'Lexend', sans-serif;">CSS</span>
             </div>
+            
             <!-- JavaScript Icon -->
-            <div class="tech-item relative group">
-                <img src="pictures/js.png" alt="JavaScript" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="JavaScript">
-                <span class="absolute inset-0 flex justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">JavaScript</span>
+            <div class="tech-item flex flex-col items-center justify-center p-2">
+                <div class="relative group mb-2">
+                    <img src="pictures/js.png" alt="JavaScript" class="w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24 hover:scale-125 transition-transform duration-300" title="JavaScript">
+                    <span class="absolute inset-0 flex justify-center items-center text-white text-sm md:text-base opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">JavaScript</span>
+                </div>
+                <span class="text-white text-sm md:text-base lg:text-lg" style="font-family: 'Lexend', sans-serif;">JavaScript</span>
             </div>
+            
             <!-- C Icon -->
-            <div class="tech-item relative group">
-                <img src="pictures/c.png" alt="C" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="C">
-                <span class="absolute inset-0 flex justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">C</span>
+            <div class="tech-item flex flex-col items-center justify-center p-2">
+                <div class="relative group mb-2">
+                    <img src="pictures/c.png" alt="C" class="w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24 hover:scale-125 transition-transform duration-300" title="C">
+                    <span class="absolute inset-0 flex justify-center items-center text-white text-sm md:text-base opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">C</span>
+                </div>
+                <span class="text-white text-sm md:text-base lg:text-lg" style="font-family: 'Lexend', sans-serif;">C</span>
             </div>
+            
             <!-- C++ Icon -->
-            <div class="tech-item relative group">
-                <img src="pictures/cpp.png" alt="C++" class="w-14 h-14 hover:scale-125 transition-transform duration-300" title="C++">
-                <span class="absolute inset-0 flex justify-center items-center text-white text-sm opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">C++</span>
+            <div class="tech-item flex flex-col items-center justify-center p-2">
+                <div class="relative group mb-2">
+                    <img src="pictures/cpp.png" alt="C++" class="w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24 hover:scale-125 transition-transform duration-300" title="C++">
+                    <span class="absolute inset-0 flex justify-center items-center text-white text-sm md:text-base opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">C++</span>
+                </div>
+                <span class="text-white text-sm md:text-base lg:text-lg" style="font-family: 'Lexend', sans-serif;">C++</span>
+            </div>
+            
+            <!-- Git Icon -->
+            <div class="tech-item flex flex-col items-center justify-center p-2">
+                <div class="relative group mb-2">
+                    <img src="pictures/git.png" alt="Git" class="w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24 hover:scale-125 transition-transform duration-300" title="Git">
+                    <span class="absolute inset-0 flex justify-center items-center text-white text-sm md:text-base opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">Git</span>
+                </div>
+                <span class="text-white text-sm md:text-base lg:text-lg" style="font-family: 'Lexend', sans-serif;">Git</span>
+            </div>
+            
+            <!-- GitHub Icon -->
+            <div class="tech-item flex flex-col items-center justify-center p-2">
+                <div class="relative group mb-2">
+                    <img src="pictures/github-logo.png" alt="GitHub" class="w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24 hover:scale-125 transition-transform duration-300" title="GitHub">
+                    <span class="absolute inset-0 flex justify-center items-center text-white text-sm md:text-base opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">GitHub</span>
+                </div>
+                <span class="text-white text-sm md:text-base lg:text-lg" style="font-family: 'Lexend', sans-serif;">GitHub</span>
+            </div>
+            
+            <!-- VS Code Icon -->
+            <div class="tech-item flex flex-col items-center justify-center p-2">
+                <div class="relative group mb-2">
+                    <img src="pictures/vscode.png" alt="VS Code" class="w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24 hover:scale-125 transition-transform duration-300" title="VS Code">
+                    <span class="absolute inset-0 flex justify-center items-center text-white text-sm md:text-base opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 rounded-lg transition-opacity duration-300">VS Code</span>
+                </div>
+                <span class="text-white text-sm md:text-base lg:text-lg" style="font-family: 'Lexend', sans-serif;">VS Code</span>
             </div>
         </div>
     </div>
@@ -86,6 +178,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
     <script src="script.js"></script>
+    
+    <!-- Mobile menu toggle script -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu-modal').classList.add('active');
+        });
+        
+        document.getElementById('close-modal').addEventListener('click', function() {
+            document.getElementById('mobile-menu-modal').classList.remove('active');
+        });
+        
+        // Close modal when clicking outside of it
+        document.getElementById('mobile-menu-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+            }
+        });
+    </script>
 
 </body>
 </html>
