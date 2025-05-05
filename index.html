@@ -16,12 +16,13 @@
     <style>
         html { scroll-behavior: smooth; }
         #vanta-bg {
-            width: 100%;
+            width: 100vw;
             height: 100vh;
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             z-index: -1;
+            overflow: hidden;
         }
         
         /* Modal Dialog Styles */
@@ -61,6 +62,22 @@
         .modal-backdrop.active .modal-content {
             transform: scale(1);
         }
+
+        /* Navbar gradient overlay */
+        .navbar-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(to bottom, 
+                rgba(0,0,0,1) 0%,
+                rgba(0,0,0,0.8) 60%,
+                rgba(0,0,0,0) 100%
+            );
+            z-index: 40;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="relative">
@@ -68,14 +85,24 @@
     <!-- Vanta Background -->
     <div id="vanta-bg" class="fixed top-0 left-0 w-screen h-screen -z-10"></div>
 
+    <!-- Navbar Gradient Overlay -->
+    <div class="navbar-gradient"></div>
+
     <!-- Navbar -->
-    <nav class="fixed top-6 w-full flex justify-end px-8 text-white text-lg z-50">
-        <button id="menu-toggle" class="block md:hidden text-white text-2xl focus:outline-none">☰</button>
-        <div id="menu" class="hidden md:flex space-x-6">
-            <a href="index.html" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Home</a>
-            <a href="about.html" class="hover:underline" style="font-family: 'Lexend', sans-serif;">About</a>
-            <a href="tech-stack.html" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Tech Stack</a>
-            <a href="contact.html" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Contact</a>
+    <nav class="fixed top-6 w-full flex justify-between items-center px-8 text-white text-lg z-50">
+        <!-- Brand Name - Only visible on desktop -->
+        <div class="hidden md:block">
+            <span class="font-bold" style="font-family: 'Lexend', sans-serif;">KBS</span>
+        </div>
+        
+        <div class="flex items-center">
+            <button id="menu-toggle" class="block md:hidden text-white text-2xl focus:outline-none">☰</button>
+            <div id="menu" class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Home</a>
+                <a href="about.html" class="hover:underline" style="font-family: 'Lexend', sans-serif;">About</a>
+                <a href="tech-stack.html" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Tech Stack</a>
+                <a href="contact.html" class="hover:underline" style="font-family: 'Lexend', sans-serif;">Contact</a>
+            </div>
         </div>
         
         <!-- Modal Dialog (Mobile Menu) -->
@@ -95,7 +122,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="min-h-screen w-full flex flex-col justify-center items-center text-center relative z-10 px-4" id="home">
+    <div class="min-h-screen w-full flex flex-col justify-center items-center text-center relative z-10 px-4 pt-28" id="home">
         <h1 class="text-4xl md:text-5xl text-white leading-tight my-9" style="font-family: 'Lexend', sans-serif;">Kim Benedict Sumilang</h1>
         <img src="pictures/homepage-picture.png" alt="Profile Image" class="w-48 md:w-96 h-48 md:h-96 rounded-full border-4 border-white shadow-lg mt-6">
     </div>
